@@ -1,0 +1,31 @@
+# Build and Target directories
+target/
+backend/target/
+frontend/build/
+frontend/node_modules/
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.iml
+*.iws
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Compiled Java files
+*.class
+
+# Log files
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Local configuration (secrets)
+*local.properties
+*secrets.properties
+.env
