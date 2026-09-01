@@ -78,19 +78,20 @@ function Allocation() {
     setSending(true);
 
     try {
+      const token = localStorage.getItem("auth");
       const res = await fetch("http://localhost:8080/allocation/send-whatsapp", {
         method: "POST",
         headers: {
-          "Authorization": "Basic " + btoa("akshara:akash123"),
+          Authorization: "Basic " + token,
         },
       });
 
-      if (!res.ok) throw new Error("Unauthorized");
+      if (!res.ok) throw new Error("Request failed with status " + res.status);
 
       alert("WhatsApp Sent ✅");
     } catch (err) {
       console.error(err);
-      alert("WhatsApp Failed ❌");
+      alert("WhatsApp Failed ❌\n" + err.message);
     }
 
     setSending(false);
